@@ -1,0 +1,83 @@
+﻿@model IEnumerable<day8solid.Models.employee>
+
+@{
+    ViewData["Title"] = "getall";
+}
+
+<h1>getall</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.SSN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.Dnum)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SSN">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SSN">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SSN">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
