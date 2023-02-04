@@ -2,11 +2,13 @@
 using day8solid.Reposiotries;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
 
 
 
 namespace day8solid.Controllers
 {
+    [Authorize]
     public class EmployeeController : Controller
     {
         IemployeeReposiotry employeeRep;
